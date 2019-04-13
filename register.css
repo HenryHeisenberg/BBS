@@ -1,0 +1,188 @@
+
+/* register-wrap */
+body{
+    background-color: bisque;
+}
+.register-top-wrap .register-top {
+    width: 958px;
+    margin: 0 auto;
+}
+.register-wrap {
+    width: 780px;
+    margin: 10px auto;
+    border-radius: 4px;
+    padding: 0 90px 100px;
+    margin-top: 100px;
+    margin-bottom: -50px;
+}
+.fl {
+    float: left;
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.fr{
+    float: right;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+h2 {
+    text-align: center;
+    /* background: url(../images/line_16.png) 50% 50% no-repeat; */
+}
+.jumbotron{
+    text-align: center;
+}
+.register-wrap .register-l {
+    width: 480px;
+    float: left;
+}
+.register-form{
+    margin-left: 30%;
+    margin-right: 30%；
+}
+
+/* register-item */
+.register-item {
+    line-height: 44px;
+    position: relative;
+}
+.register-item .register-name {
+    display: block;
+    width: 85px;
+    text-align: right;
+    position: absolute;
+    top: 0;
+    font-size: 16px;
+}
+.register-item .register-input {
+    padding-left: 100px;
+    padding-right: 70px;
+    position: relative;
+}
+.register-item .register-input input {
+    display: block;
+    width: 50%;
+    height: 42px;
+    line-height: 42px;
+    border: 1px solid #dedede;
+    font-size: 14px;
+    text-indent: 10px;
+    outline: 0;
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
+    opacity: 0.8;
+    border-radius: 8px;
+}
+button, input, select {
+    font-family: "Microsoft Yahei";
+    border: 1px solid #d8d8d8;
+    background: #fff;
+}
+.register-item .icon-status {
+    display: block;
+    width: 20px;
+    height: 20px;
+    right: 40px;
+    top: 12px;
+    position: absolute;
+}
+em, i {
+    font-style: normal;
+}
+.register-item .register-input .error {
+    display: block;
+    height: 24px;
+    line-height: 18px;
+    color: #ec584e;
+    clear: both;
+}
+/* 验证码图片 */
+.register-item .yzm-img {
+    float: left;
+    width: 130px;
+    height: 44px;
+    background: #ddd;
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
+    margin-left: 50px;
+    text-align: center;
+}
+.register-item.register-msg input, .register-item.register-yzm input {
+    width: 170px;
+    float: left;
+}
+.register-item .register-msg-btn {
+    float: left;
+    width: 130px;
+    height: 44px;
+    background: #ec584e;
+    color: #fff;
+    font-size: 16px;
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
+    margin-left: 50px;
+}
+.btn-register, .register-item .register-msg-btn {
+    text-align: center;
+    cursor: pointer;
+}
+/* .clearfix::after {
+    content: '';
+    display: table;
+    clear: both;
+} */
+.register-read a {
+    color: #ec584e;
+}
+a {
+    text-decoration: none;
+    color: #333;
+}
+/* .register-read span.active {
+    background: url(../images/check_16.png) 0 50% no-repeat;
+} */
+.register-read span {
+    margin-left: 200px;
+    padding-left: 20px;
+    cursor: pointer;
+    font-size: 14px;
+    /* background: url(../images/check_13.png) 0 50% no-repeat; */
+}
+.register-submit {
+    padding: 10px 70px 10px 100px;
+}
+
+.btn-register, .register-item .register-msg-btn {
+    text-align: center;
+    cursor: pointer;
+}
+.register-submit {
+    padding: 10px 70px 10px 100px;
+    display: block;
+    width: 50%;
+    height: 42px;
+    text-align: center;
+}
+.register-submit span{
+    width: 100%;
+    margin-left: 40px;
+    line-height: 42px;
+}
+
+/* footer */
+.mop-footer {
+    background: #f2f2f2;
+    border-top: 1px solid #d7d7d7;
+}
+.mop-footer {
+    text-align: center;
+    padding: 30px;
+    z-index: 3;
+    color: #999;
+    font-size: 14px;
+    margin-top: 150px;
+}
+.mop-footer, .mop-sitemap, .mop-sitemap > span {
+    position: relative;
+}
