@@ -1,0 +1,64 @@
+body{
+    padding:0;
+}
+
+.topnav{
+    background-color:#333;
+    padding-left:12px;
+    height:55px;
+    position: relative;
+    box-shadow: 2px 2px 3px #545759;
+}
+
+.topnav a{
+    float: left;
+    text-decoration: none;
+    color: lightblue;
+    text-align: center;
+    display: block;
+    margin-top:9px;
+}
+.topnav a:hover{
+    color: lightslategray;
+    text-decoration: none;
+}
+/* 头像 */
+.topnav  a#imgLi{
+    float:right;
+    margin-right:30px;
+}
+/* 汉堡栏 */
+.topnav a.icon{
+    margin-top:-7px;
+    display: none;
+    float:right;
+}
+/* 输入框 */
+#search{
+    width:40%;
+    position: absolute;
+}
+/* 按钮 */
+#searchButton{
+    position: absolute;
+    width:14%;
+    margin-left:41%;
+}
+/* 输入框及按钮的父div */
+.lineDiv{
+    position: relative;
+    margin-left: 50%;
+    top:9px;
+}
+
+@media screen and (max-width:768px){
+    .topnav a.icon{
+        display:block;
+    }
+    .topnav div.lineDiv{
+        display: none;
+    }
+}
+
+
+

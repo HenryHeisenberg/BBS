@@ -1,0 +1,48 @@
+*{
+    margin:0;
+    padding:0;
+}
+.nav{
+    background:#3a3a3a;
+    height:65px;
+
+
+}
+.nav li{
+    list-style: none;
+    float: left;
+    line-height: 65px;
+    margin-left: 10px;
+}
+.nav input{
+    margin-top: 20px;
+    margin-left: 10px;
+    margin-right:10px;
+    height:21px;
+}
+.nav li a{
+    text-decoration: none;
+    color:white;
+}
+.nav li a:hover{
+    color:lightblue;
+}
+
+.fDiv{
+    
+    width:100%;
+    height:100%;
+    background: #ecebeb;
+    position: relative;
+    margin-top: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+
+}
+.sDiv{
+    width:250px;
+    border-radius:15px;
+    background-color: lightblue;
+    position: absolute;
+    text-align: center;
+}
