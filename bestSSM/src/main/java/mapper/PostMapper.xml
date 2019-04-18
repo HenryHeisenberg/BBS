@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="mapper.PostMapper">
+  <resultMap id="BaseResultMap" type="data.Post">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="post_id" jdbcType="BIGINT" property="postId" />
+    <result column="title" jdbcType="VARCHAR" property="title" />
+    <result column="author_id" jdbcType="VARCHAR" property="authorId" />
+    <result column="create_datetime" jdbcType="TIMESTAMP" property="createDatetime" />
+    <result column="cover" jdbcType="VARCHAR" property="cover" />
+    <result column="theme" jdbcType="TINYINT" property="theme" />
+    <result column="traffic" jdbcType="INTEGER" property="traffic" />
+    <result column="top" jdbcType="BIT" property="top" />
+  </resultMap>
+</mapper>

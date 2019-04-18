@@ -46,6 +46,7 @@ public class LoginAndRegister {
         UsernamePasswordToken token = new UsernamePasswordToken(username, password);
 
         try {
+           // token.setRememberMe(true);
             subject.login(token);
         } catch(UnknownAccountException | IncorrectCredentialsException exception) {
             response.setStatus(HttpServletResponse.SC_FORBIDDEN);

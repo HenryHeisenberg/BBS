@@ -54,9 +54,14 @@
     </bean>
 
     <!-- 扫描生成mapper，可能不需要这段，与maybatis-config冲突吗？ -->
-    <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+    <!-- <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
         <property name="basePackage" value="mapper"></property>
         <property name="sqlSessionFactoryBeanName" value="sqlSessionFactory"></property>
-    </bean>
+    </bean> -->
+    <!-- 替换上面那个 -->
+    <bean class="tk.mybatis.spring.mapper.MapperScannerConfigurer">
+        <property name="basePackage" value="mapper"></property>
+        <property name="sqlSessionFactoryBeanName" value="sqlSessionFactory"></property>
+    </bean> 
 
 </beans>

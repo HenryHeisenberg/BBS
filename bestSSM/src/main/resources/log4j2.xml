@@ -30,7 +30,7 @@
              additivity="true">
              <AppenderRef ref="running-log" />
          </Logger>
-         <Root level="debug">
+         <Root level="error">
              <AppenderRef ref="Console" />
          </Root>
      </Loggers>

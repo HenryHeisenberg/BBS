@@ -16,29 +16,49 @@
         http://www.springframework.org/schema/tx
         http://www.springframework.org/schema/tx/spring-tx.xsd" >
 
-
+    <!-- 算法匹配 -->
     <bean id="credentialsMatcher" class="org.apache.shiro.authc.credential.HashedCredentialsMatcher">
         <property name="hashAlgorithmName" value="md5"/> 
         <property name="hashIterations" value="2"/> 
         <property name="storedCredentialsHexEncoded" value="true"/> 
     </bean> 
+    <!-- shiro cookie设置 -->
+    <bean id="simpleCookie" class="org.apache.shiro.web.servlet.SimpleCookie">
+        <property name="name" value="sid"></property>
+        <property name="maxAge" value="3600"></property>
+        <property name="httpOnly" value="true"></property>
+    </bean>
+    <!-- session manger 设置 -->
+    <bean id="sessionManger" class="org.apache.shiro.web.session.mgt.DefaultWebSessionManager">
+        <property name="sessionIdCookie" ref="simpleCookie"></property>
+        <property name="sessionIdCookieEnabled" value="true"></property>
+    </bean>
 
     <!-- Realm 实现 --> 
     <bean id="myRealm" class="service.MyRealm"> 
          <property name="credentialsMatcher" ref="credentialsMatcher"/> 
     </bean>
 
-    <bean id="securityManager" class="org.apache.shiro.mgt.DefaultSecurityManager">
+    <bean id="securityManager" class="org.apache.shiro.web.mgt.DefaultWebSecurityManager">
         <property name="realms"> 
             <list>
                 <ref bean="myRealm"/>
             </list> 
-        </property> 
+        </property>
+        <property name="sessionManager" ref="sessionManger"></property>
     </bean> 
     
+    <!-- SecurityUtils.setSecurityManager(secutityManager) -->
     <bean class="org.springframework.beans.factory.config.MethodInvokingFactoryBean"> 
         <property name="staticMethod" value="org.apache.shiro.SecurityUtils.setSecurityManager"/> 
         <property name="arguments" ref="securityManager"/> 
     </bean> 
+
+    <!-- shiro过滤器 -->
+    <bean id="shiroFilter" class="org.apache.shiro.spring.web.ShiroFilterFactoryBean"> 
+        <property name="securityManager" ref="securityManager"/> 
+    </bean>
+
+    
 
 </beans>
