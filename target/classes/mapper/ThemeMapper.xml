@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="mapper.ThemeMapper">
+  <resultMap id="BaseResultMap" type="data.Theme">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="theme_id" jdbcType="TINYINT" property="themeId" />
+    <result column="theme_name" jdbcType="VARCHAR" property="themeName" />
+  </resultMap>
+</mapper>

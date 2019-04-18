@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="mapper.ReportMapper">
+  <resultMap id="BaseResultMap" type="data.Report">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="report_id" jdbcType="BIGINT" property="reportId" />
+    <result column="send_id" jdbcType="VARCHAR" property="sendId" />
+    <result column="send_username" jdbcType="VARCHAR" property="sendUsername" />
+    <result column="create_datetime" jdbcType="TIMESTAMP" property="createDatetime" />
+    <result column="post_id" jdbcType="BIGINT" property="postId" />
+    <result column="floor_id" jdbcType="INTEGER" property="floorId" />
+    <result column="comment_id" jdbcType="INTEGER" property="commentId" />
+  </resultMap>
+</mapper>
