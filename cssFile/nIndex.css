@@ -50,6 +50,20 @@ body{
     margin-left: 50%;
     top:9px;
 }
+/* 瀑布流布局 */
+.waterfall-wrap{
+    width: 1272px;
+    padding: 25px 0 0;
+    margin: 23px auto;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+}
+.waterfall-wrap div{
+    margin-right: 30px;
+    margin-bottom: 30px;
+}
 
 @media screen and (max-width:768px){
     .topnav a.icon{
