@@ -28,7 +28,7 @@
     <!-- <mvc:resources mapping="/**" location="/"></mvc:resources> -->
 
     <!-- 配置读取db.properties -->
-    <context:property-placeholder location="classpath:db.properties" />
+    <context:property-placeholder location="classpath:db.properties" ignore-unresolvable="true" />
     <!-- 配置DataSource -->
     <bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource">
         <property name="jdbcUrl" value="${jdbc.url}" ></property>

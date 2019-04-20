@@ -12,6 +12,7 @@ import org.apache.shiro.crypto.hash.SimpleHash;
 import org.apache.shiro.subject.Subject;
 import org.apache.logging.log4j.LogManager;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -34,6 +35,9 @@ public class LoginAndRegister {
     @Autowired
     private UserMapper userMapper;
 
+    @Autowired
+    private RedisTemplate<String,String> redis;
+
     @ResponseBody
     @RequestMapping(value = "/login")
     public Result login(String username, String password, HttpServletResponse response){
@@ -49,11 +53,12 @@ public class LoginAndRegister {
            // token.setRememberMe(true);
             subject.login(token);
         } catch(UnknownAccountException | IncorrectCredentialsException exception) {
+            System.out.println("账号密码错误达瓦大");
             response.setStatus(HttpServletResponse.SC_FORBIDDEN);
             return new Result("账号或密码错误", null);
         } catch(ExcessiveAttemptsException exception) {
             response.setStatus(HttpServletResponse.SC_FORBIDDEN);
-            return new Result("输入错误密码超过五次,账号锁定，请五分钟后再试试", null);
+            return new Result("输入错误密码超过五次,账号锁定，请十分钟后再试试", null);
         } catch(DisabledAccountException exception){
             response.setStatus(HttpServletResponse.SC_FORBIDDEN);
             return new Result("账号已经被拉入黑名单,请联系管理员解除黑名单",null);
@@ -72,8 +77,14 @@ public class LoginAndRegister {
 
     @ResponseBody
     @RequestMapping(value="/register")
-    public Result register(String username, String password, String email, HttpServletResponse response){
+    public Result register(String username, String password, String email, String code , HttpServletResponse response){
         User user = userMapper.selectByPrimaryKey(username);
+
+        String realCode = redis.opsForValue().get("code:"+email);
+
+        if (realCode==null || !realCode.equals(code)) {
+            return new Result("验证码错误",null);
+        }
 
         if (user!=null) {
           response.setStatus(HttpServletResponse.SC_CONFLICT);
@@ -88,7 +99,10 @@ public class LoginAndRegister {
             user.setEmail(email);
             user.setSalt(salt);
             
+            //注册成功，插入用户，删除验证码
             userMapper.insertSelective(user);
+            redis.delete("code:"+email);
+
             response.setStatus(HttpServletResponse.SC_OK);
             return new Result("注册成功", null);
         }

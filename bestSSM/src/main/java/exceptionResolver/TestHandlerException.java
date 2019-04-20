@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 
 /**
  * TestHandlerException
+ * 测试权限控制处理，当其他地方抛出权限不足的错误时，会进入此方法，返回“重定向到登录页面”的response
  */
 @ControllerAdvice
 @ResponseBody
