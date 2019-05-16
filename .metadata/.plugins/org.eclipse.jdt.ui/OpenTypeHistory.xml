@@ -1,13 +1,2 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<typeInfoHistroy>
-    <typeInfo handle="=dream/src\/main\/java&lt;com.blog.service{UserService.java[UserService" modifiers="513" timestamp="1555397876118"/>
-    <typeInfo handle="=dream/src\/main\/java&lt;com.blog.service{CommentService.java[CommentService" modifiers="513" timestamp="1555557245990"/>
-    <typeInfo handle="=dream/src\/main\/java&lt;com.blog.service{LoginLogService.java[LoginLogService" modifiers="513" timestamp="1555397644296"/>
-    <typeInfo handle="=dream/src\/main\/java&lt;com.blog.service{ResourceService.java[ResourceService" modifiers="513" timestamp="1555406663004"/>
-    <typeInfo handle="=dream/src\/main\/java&lt;com.blog.service{RoleResourceService.java[RoleResourceService" modifiers="513" timestamp="1555407269342"/>
-    <typeInfo handle="=dream/src\/main\/java&lt;com.blog.service{RoleService.java[RoleService" modifiers="513" timestamp="1555397725124"/>
-    <typeInfo handle="=dream/src\/main\/java&lt;com.blog.service{RoleUserService.java[RoleUserService" modifiers="513" timestamp="1555397753998"/>
-    <typeInfo handle="=dream/src\/main\/java&lt;com.blog.service{UpvoteService.java[UpvoteService" modifiers="513" timestamp="1555397166383"/>
-    <typeInfo handle="=dream/src\/main\/java&lt;com.blog.service{UserContentService.java[UserContentService" modifiers="513" timestamp="1555397544937"/>
-    <typeInfo handle="=dream/src\/main\/java&lt;com.blog.service{UserInfoService.java[UserInfoService" modifiers="513" timestamp="1555569693386"/>
-</typeInfoHistroy>
+<typeInfoHistroy/>
